@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class ="credits">
+        <h2>Credits</h2>
+        <h3>Aliviado, Dhale Joshua G.</h3>
+        <h3>Acibes,  Lovely Jean C.</h3>
+        <h3>Altubar, Angeline Q.</h3>
+        <h3>Elepan, Rican J.</h3>
+    </div>
+<div class="calc-container">
+    <h2>Calculator</h2>
+
+    <input type="text" id="display" placeholder="0"><br><br>
+
+    <input type="button" value="7" onclick="insert('7')"title = "namber sebin">
+    <input type="button" value="8" onclick="insert('8')"title = "namber eit">
+    <input type="button" value="9" onclick="insert('9')"title = "namber nayn">
+    <input type="button" value="+" onclick="insert('+')"title = " plas"><br><br>
+
+    <input type="button" value="4" onclick="insert('4')"title = "namber por">
+    <input type="button" value="5" onclick="insert('5')"title = "namber payb">
+    <input type="button" value="6" onclick="insert('6')"title = "namber siks">
+    <input type="button" value="-" onclick="insert('-')"title = "maynus"><br><br>
+
+    <input type="button" value="1" onclick="insert('1')"title = "namber wan">
+    <input type="button" value="2" onclick="insert('2')"title = "namber to">
+    <input type="button" value="3" onclick="insert('3')"title = "namber tre">
+    <input type="button" value="x" onclick="insert('*')"title = "tayms"><br><br>
+
+    <input type="button" value="0" onclick="insert('0')"title = "namber sero">
+    <input type="button" value="." onclick="insert('.')"title = "pindot">
+    <input type="button" value="/" onclick="insert('/')"title = " dibayd">
+    <input type="button" value="=" onclick="calculate()"title = "ikwals"><br><br>
+
+    <input type="button" value="CLEAR" onclick="clearDisplay()">
+    <input type="button" value="DEL" onclick="deleteLast()">
+</div>
+<script>
+    function insert(value) {
+        document.getElementById("display").value += value;
+    }
+    function clearDisplay() {
+    document.getElementById("display").value = "";
+}
+function deleteLast() {
+    let d = document.getElementById("display");
+    d.value = d.value.slice(0, -1);
+}
+    function calculate() {
+    let d = document.getElementById("display");
+    try {
+        d.value = eval(d.value);
+    } catch {
+        d.value = "Error.";
+    }
+}
+</script>
+
+</body>
+</html>
