@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+</head>
+
+<body>
+<h2>Login</h2>
+<form id="login">
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+<BR>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password">
+
+<BR>
+
+<button type="submit">Login</button>
+</form>
+</div>
+<script>
+document.getElementById('login').addEventListener('submit', function(event){
+event.preventDefault();
+
+const username = document.getElementById('username').value;
+const password = document.getElementById('password').value;
+
+if username ==='' || password === '') {
+alert('Please enter both username and password.'); }
+ else if (username === 'Dhale'  && password ==='pass')
+alert(' Login successful!');
+} else {
+alert('Invalid username or password.');
+}
+});
+</script>
+</body>
+</html>
